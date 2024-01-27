@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        html {
+            height: 100%
+        }
+        
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0
+        }
+        
+        #carteId {
+            height: 100%
+        }
+    </style>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false">
+    </script>
+    <script type="text/javascript">
+        function initialize() {
+            var mapOptions = {
+                center: new google.maps.LatLng(-18.397, 45.644),
+                zoom: 6
+            };
+            var carte = new google.maps.Map(document.getElementById("carteId"),
+                mapOptions);
+            var location = new google.maps.LatLng(-18.397, 45.644);
+            var marker = new google.maps.Marker({
+                //marker est créée en utilisant le constructeur google.maps.Marker, qui prend en paramètres un objet de configuration contenant les propriétés du marqueur. Les propriétés spécifiées sont la position (l'emplacement du marqueur), draggable 
+                position: location,
+                draggable: true,
+                map: carte
+            });
+
+            var ligne = [
+                //ligne est créée en utilisant un tableau de google.maps.LatLng représentant les coordonnées des points constituant la ligne tracée. Dans cet exemple, trois points sont spécifiés.
+                new google.maps.LatLng(-18.397, 45.644),
+                new google.maps.LatLng(-17.780, 48.222),
+                new google.maps.LatLng(-17.580, 48.322),
+
+            ];
+
+            var traceLigne = new google.maps.Polyline({
+                path: ligne, //chemin du tracé
+                strokeColor: "#FF0000", //couleur du tracé
+                strokeOpacity: 1.0, //opacité du tracé
+                strokeWeight: 2 //grosseur du tracé
+            });
+
+            traceLigne.setMap(carte);
+            //setMap() est appelée sur l'objet traceLigne avec carte en tant que paramètre pour associer la ligne à la carte et l'afficher.
+
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+        //google.maps.event.addDomListener() est utilisée pour écouter l'événement de chargement de la page (window.load). Lorsque la page est chargée, la fonction initialize() est appelée, ce qui permet d'initialiser la carte, d'afficher la carte avec le marqueur et de tracer la ligne sur la page.
+    </script>
+</head>
+
+<body>
+    <div id="carteId" />
+</body>
+
+</html>

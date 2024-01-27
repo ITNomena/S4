@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        html {
+            height: 100%
+        }
+        
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0
+        }
+        
+        #carteId {
+            height: 100%
+        }
+    </style>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=geometry"></script>
+    <script type="text/javascript">
+        function initialize() {
+            var mapOptions = {
+                center: new google.maps.LatLng(-18.979517, 47.550083),
+                zoom: 50,
+                mapTypeId: google.maps.MapTypeId.SATELLITE
+            };
+            var carte = new google.maps.Map(document.getElementById("carteId"), mapOptions);
+            
+            var location = new google.maps.LatLng(-18.979517, 47.550083);
+            
+            var marker = new google.maps.Marker({
+                position: location,
+                draggable: true,
+                map: carte
+            });
+
+            var infowindow = new google.maps.InfoWindow({
+                content: "<strong>Nomena</strong><strong>Lot h131 Merimanjaka</strong> <strong>Coordonnées de votre maison:</strong> Latitude: -18.979517, Longitude: 47.550083"
+            });
+
+            marker.addListener("mouseover", function() {
+                infowindow.open(carte, marker);
+            });
+
+            var points = [
+                new google.maps.LatLng(-18.979631081145218, 47.549912840989734),
+                new google.maps.LatLng(-18.979382082759905, 47.54994498508973),
+                new google.maps.LatLng(-18.979413221091473, 47.55025582984378),
+                new google.maps.LatLng(-18.97965311192131, 47.55023900397546),
+                new google.maps.LatLng(-18.979631081145218, 47.549912840989734),
+            ];
+
+            var surface = google.maps.geometry.spherical.computeArea(points);
+
+            marker.addListener("click", function() {
+                alert("Superficie de votre maison: " + surface.toFixed(2) + " m²");
+            });
+
+            var traceLigne = new google.maps.Polyline({
+                path: points,
+                strokeColor: "#FF0000",
+                strokeOpacity: 1.0,
+                strokeWeight: 2
+            });
+
+            traceLigne.setMap(carte);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="carteId"></div>
+    
+    <script type="text/javascript">
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</body>
+
+</html>

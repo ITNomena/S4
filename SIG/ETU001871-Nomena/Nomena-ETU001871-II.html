@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        html {
+            height: 100%
+        }
+        
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0
+        }
+        
+        #carteId {
+            height: 100%
+        }
+    </style>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false">
+        // Balise pour charger le script JavaScript de l'API Google Maps depuis l'URL spécifiée.
+    </script>
+    <script type="text/javascript">
+        function initialize() {
+            // function initialize() : Définit une fonction nommée "initialize" qui sera appelée pour initialiser la carte.
+            var mapOptions = {
+                //var mapOptions : Définit un objet contenant les options de configuration de la carte, telles que le centre, le zoom et le type de carte.
+                center: new google.maps.LatLng(-18.979517, 47.550083),
+                center: new google.maps.LatLng(-18.979517, 47.550083),
+                zoom: 50,
+                mapTypeId: google.maps.MapTypeId.SATELLITE
+            };
+            var carte = new google.maps.Map(document.getElementById("carteId"),
+                mapOptions);
+            //carte est créée en utilisant le constructeur google.maps.Map, qui prend en paramètres l'élément HTML avec l'ID "carteId" et les options de la carte définies précédemment. Cela lie la carte à cet élément spécifique dans le document HTML.
+            var location = new google.maps.LatLng(-18.979517, 47.550083);
+            //location est créée en utilisant le constructeur google.maps.LatLng, qui prend en paramètres les coordonnées -18.397 (latitude) et 45.644 (longitude) de l'emplacement du marqueur.
+
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+        //google.maps.event.addDomListener() est utilisée pour écouter l'événement de chargement de la page (window.load). Lorsque la page est chargée, la fonction initialize() est appelée, ce qui permet d'initialiser la carte et d'afficher la carte avec le marqueur sur la page.
+    </script>
+</head>
+
+<body>
+    <div id="carteId" >
+</body>
+
+</html>

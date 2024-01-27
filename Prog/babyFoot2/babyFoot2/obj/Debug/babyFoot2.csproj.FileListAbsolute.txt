@@ -1,0 +1,12 @@
+C:\Users\ITU\source\repos\babyFoot2\babyFoot2\bin\Debug\babyFoot2.exe.config
+C:\Users\ITU\source\repos\babyFoot2\babyFoot2\bin\Debug\babyFoot2.exe
+C:\Users\ITU\source\repos\babyFoot2\babyFoot2\bin\Debug\babyFoot2.pdb
+C:\Users\ITU\source\repos\babyFoot2\babyFoot2\obj\Debug\babyFoot2.csprojAssemblyReference.cache
+C:\Users\ITU\source\repos\babyFoot2\babyFoot2\obj\Debug\babyFoot2.Form1.resources
+C:\Users\ITU\source\repos\babyFoot2\babyFoot2\obj\Debug\babyFoot2.Properties.Resources.resources
+C:\Users\ITU\source\repos\babyFoot2\babyFoot2\obj\Debug\babyFoot2.csproj.GenerateResource.cache
+C:\Users\ITU\source\repos\babyFoot2\babyFoot2\obj\Debug\babyFoot2.csproj.CoreCompileInputs.cache
+C:\Users\ITU\source\repos\babyFoot2\babyFoot2\obj\Debug\babyFoot2.exe
+C:\Users\ITU\source\repos\babyFoot2\babyFoot2\obj\Debug\babyFoot2.pdb
+C:\Users\ITU\source\repos\babyFoot2\babyFoot2\obj\Debug\babyFoot2.Insertion.resources
+C:\Users\ITU\source\repos\babyFoot2\babyFoot2\obj\Debug\babyFoot2.Gagne.resources

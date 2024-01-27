@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        html {
+            height: 100%
+        }
+        
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0
+        }
+        
+        #carteId {
+            height: 100%
+        }
+    </style>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false">
+        // Balise pour charger le script JavaScript de l'API Google Maps depuis l'URL spécifiée.
+    </script>
+    <script type="text/javascript">
+        function initialize() {
+            // function initialize() : Définit une fonction nommée "initialize" qui sera appelée pour initialiser la carte.
+            var mapOptions = {
+                //var mapOptions : Définit un objet contenant les options de configuration de la carte, telles que le centre, le zoom et le type de carte.
+                center: new google.maps.LatLng(-18.397, 45.644),
+                zoom: 6,
+                mapTypeId: google.maps.MapTypeId.SATELLITE
+            };
+
+            var carte = new google.maps.Map(document.getElementById("carteId"),
+                mapOptions);
+            //var carte = new google.maps.Map(document.getElementById("carteId"), mapOptions); : Crée une nouvelle instance de la carte en utilisant l'élément HTML avec l'identifiant "carteId" et les options de configuration définies précédemment.
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+
+<body>
+    <div id="carteId" />
+</body>
+
+</html>
